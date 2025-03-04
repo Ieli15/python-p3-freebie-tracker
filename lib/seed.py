@@ -1,16 +1,16 @@
 from models import session, Company, Dev, Freebie
 
-google = Company(name="Google")
-apple = Company(name="Apple")
+genovese = Company(name="Genovese")
+gigante = Company(name="Gigante")
 
-alice = Dev(name="Alice")  
-bob = Dev(name="Bob")
+elias = Dev(name="Elias")  
+maureen = Dev(name="Maureen")
 
-session.add_all([google, apple, alice, bob])
+session.add_all([genovese, gigante, elias, maureen])
 session.commit()
 
-f1 = Freebie(item_name="T-shirt", value=10, dev=alice, company=google)  
-f2 = Freebie(item_name="Laptop", value=1000, dev=bob, company=apple)
+f1 = Freebie(item_name="T-shirt", value=10, dev=elias, company=genovese)  
+f2 = Freebie(item_name="Laptop", value=1000, dev=maureen, company=gigante)
 
 session.add_all([f1, f2])
 session.commit()
